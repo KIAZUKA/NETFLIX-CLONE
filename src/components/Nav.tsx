@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import "./Nav.scss";
-
 type Props = {
   className?: string;
-};
+}
 
 export const Nav = (props: Props) => {
   const [show, setShow] = useState(false);
@@ -14,18 +13,18 @@ export const Nav = (props: Props) => {
       } else {
         setShow(false);
       }
-    };
+    }
 
     window.addEventListener("scroll", handleShow);
     return () => {
-      window.removeEventListener("scroll", handleShow);
-    };
-  }, []);
+      window.removeEventListener("scroll", handleShow)
+    }
+  }, [])
   return (
     <div className={`Nav ${show && "Nav-black"}`}>
       <img
         className="Nav-logo"
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1920px-Netflix_2015_logo.svg.png"
+        src="https://upload.wikimedia.org/wikipedia/commons/6/69/Netflix_logo.svg"
         alt="Netflix Logo"
       />
       <img
@@ -34,5 +33,5 @@ export const Nav = (props: Props) => {
         alt="Avatar"
       />
     </div>
-  );
-};
+  )
+}

@@ -16,11 +16,11 @@ function App() {
         isLargeRow
       />
       <Row title="Top Rated" fetchUrl={requests.feactTopRated} />
-      <Row title="Action Movies" fetchUrl={requests.feactActionMovies} />
+      <Row title="Anime" fetchUrl={requests.feactAnime} />
       <Row title="Comedy Movies" fetchUrl={requests.feactComedyMovies} />
-      <Row title="Horror Movies" fetchUrl={requests.feactHorrorMovies} />
+      <Row title="Western Movies" fetchUrl={requests.feactHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.feactRomanceMovies} />
-      <Row title="DOcumentaries" fetchUrl={requests.feactDocumentMovies} />
+      <Row title="Documentaries" fetchUrl={requests.feactDocumentMovies} />
     </div>
   );
 }

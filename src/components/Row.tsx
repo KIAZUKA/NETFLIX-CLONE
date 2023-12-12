@@ -58,16 +58,11 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      let trailerurl = await axios.get(`/movie/${movie.id}/videos?api_key=XXX`);
+      let trailerurl = await axios.get(
+        `/movie/${movie.id}/videos?api_key=b073e47fa0a6a5569754ca5f0c2d4a9c`
+      );
       setTrailerUrl(trailerurl.data.results[0]?.key);
     }
-    //   movieTrailer(movie?.name || movie?.title || movie?.original_name || "")
-    //     .then((url: string) => {
-    //       const urlParams = new URLSearchParams(new URL(url).search);
-    //       setTrailerUrl(urlParams.get("v"));
-    //     })
-    //     .catch((error: any) => console.log(error.message));
-    // }
   };
 
   return (
@@ -79,9 +74,8 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
           <img
             key={movie.id}
             className={`Row-poster ${isLargeRow && "Row-poster-large"}`}
-            src={`${base_url}${
-              isLargeRow ? movie.poster_path : movie.backdrop_path
-            }`}
+            src={`${base_url}${isLargeRow ? movie.poster_path : movie.backdrop_path
+              }`}
             alt={movie.name}
             onClick={() => handleClick(movie)}
           />
@@ -90,4 +84,4 @@ export const Row = ({ title, fetchUrl, isLargeRow }: Props) => {
       {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
-};
+}

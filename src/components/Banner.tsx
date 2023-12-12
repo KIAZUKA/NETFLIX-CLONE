@@ -20,10 +20,10 @@ export const Banner = () => {
       const request = await axios.get(requests.feachNetflixOriginals);
       console.log(request.data.result);
 
-      //apiからランダムで値を取得している
+      // APIからランダムで値を取得している
       setMovie(
         request.data.results[
-          Math.floor(Math.random() * request.data.results.length - 1)
+        Math.floor(Math.random() * request.data.results.length - 1)
         ]
       );
       return request;
@@ -32,7 +32,7 @@ export const Banner = () => {
   }, []);
   console.log(movie);
 
-  // descriptionの切り捨てよう関数
+  // descriptionの切り捨て用関数
   function truncate(str: any, n: number) {
     // undefinedを弾く
     if (str !== undefined) {
